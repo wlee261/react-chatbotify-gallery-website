@@ -5,6 +5,7 @@ import { handleLogin } from '../../services/authService';
 import { useAuth } from '../../context/AuthContext';
 import { SiteConfig } from '../../constants/SiteConfig';
 import logo from '../../assets/images/logo.png';
+import AppThemeToggle from './AppThemeToggle';
 
 /**
  * Navigation bar for users to navigate between pages.
@@ -25,8 +26,8 @@ const NavigationBar = () => {
 
 	return (
 		<nav
-			className="fixed top-0 w-full z-50 opacity-80 bg-black
-				text-white py-2 px-6 flex justify-between items-center"
+			className="fixed top-0 w-full z-50 opacity-80 bg-background-secondary
+				text-text-primary py-2 px-6 flex justify-between items-center"
 			style={{ height: '8vh' }}
 		>
 			<Link to="/" className="flex items-center">
@@ -233,6 +234,9 @@ const NavigationBar = () => {
 						</button>
 					</li>
 				)}
+				<li>
+					<AppThemeToggle />
+				</li>
 			</ul>
 		</nav>
 	)
