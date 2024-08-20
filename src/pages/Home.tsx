@@ -4,6 +4,7 @@ import { handleLogin } from '../services/authService';
 import { useAuth } from '../context/AuthContext';
 import { SiteConfig } from '../constants/SiteConfig';
 import logo from "../assets/images/logo.png";
+import LoadingSpinner from '../components/LoadingSpinner/LoadingSpinner';
 
 /**
  * Greets user as they visit the home (landing) page.
@@ -24,6 +25,7 @@ const HomePage = () => {
 				>
 					Welcome to <br className="md:hidden" /> {SiteConfig.siteName}
 				</h1>
+				<LoadingSpinner />
 				{isLoggedIn ? (
 					<p id="subtitle" className="text-lg text-center mb-8">
 						It&apos;s good to see you, {userData?.name}!
